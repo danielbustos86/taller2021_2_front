@@ -120,15 +120,16 @@ const MiComponente = () => {
            {name: "Name 1", title: "Title 1", location: "Location 1", age: 30, salary: 10},
            {name: "Name 2", title: "Title 2", location: "Location 2", age: 31, salary: 11},
        ];
-        
+      
+       const handleRowClick = (rowData, rowMeta) => {
+        console.log(rowData.name)
+    };
        const options = {
         filterType: 'checkbox',
         onlyOneRowCanBeSelected:true,
         onRowClick: handleRowClick
        };
-       const handleRowClick = (rowData, rowMeta) => {
-        console.log(rowData.name)
-    };
+      
     return (
         <Fragment>
             <h1>Formulario</h1>
@@ -143,12 +144,12 @@ const MiComponente = () => {
                 <button onClick={enviarDatos}>Enviar</button>
 
 
-                <div className="users">
+                {/* <div className="users">
                     {personas.map((persona) => (
                  
                           <li>{persona.nombre} {persona.apellido}</li>
                     ))}
-                </div>
+                </div> */}
 
             </div>
             <MaterialDatatable

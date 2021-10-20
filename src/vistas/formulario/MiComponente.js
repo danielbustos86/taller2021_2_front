@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import axios from 'axios'
 import MaterialDatatable from "material-datatable";
-
+import Swal from 'sweetalert2'
 
 const MiComponente = () => {
     const [nombre, setNombre] = useState("")
@@ -37,7 +37,11 @@ const MiComponente = () => {
     }
 
     useEffect(()=>{
-
+        Swal.fire(
+            'Good job!',
+            'You clicked the button!',
+            'success'
+          )
         getPersonas()
     },[])
     async function getPersonas() {
